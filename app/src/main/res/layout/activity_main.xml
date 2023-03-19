@@ -71,7 +71,7 @@
                 android:layout_height="55dp"
                 android:layout_width="150dp"
                 android:layout_marginBottom="10dp"
-                android:layout_gravity="left"
+                android:layout_gravity="right"
                 android:orientation="horizontal"
                 android:text="SIGN UP"
                 android:background="@drawable/bkg_login_reg_btn"
