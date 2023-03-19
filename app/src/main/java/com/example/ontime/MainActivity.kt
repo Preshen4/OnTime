@@ -10,4 +10,6 @@ class MainActivity : AppCompatActivity() {
         // Removes the title bar
         supportActionBar?.hide()
     }
+
+    
 }

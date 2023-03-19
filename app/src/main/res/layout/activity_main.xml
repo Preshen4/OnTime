@@ -26,8 +26,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_email"
-            android:layout_height="50dp"
-            android:layout_width="310dp"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
             android:layout_alignBottom="@+id/logobanner"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
@@ -41,8 +41,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_password"
-            android:layout_height="50dp"
-            android:layout_width="310dp"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
             android:layout_alignBottom="@+id/logobanner"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
@@ -58,14 +58,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <Button
-                android:layout_height="55dp"
-                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="10dp"
                 android:orientation="horizontal"
                 android:text="LOGIN"
-                android:background="@drawable/bkg_loginbtn"
+                android:background="@drawable/bkg_login_reg_btn"
                 />
             <Button
                 android:layout_height="55dp"
@@ -74,18 +74,18 @@
                 android:layout_gravity="left"
                 android:orientation="horizontal"
                 android:text="SIGN UP"
-                android:background="@drawable/bkg_loginbtn"
+                android:background="@drawable/bkg_login_reg_btn"
                 />
         </LinearLayout>
 
         <Button
-            android:layout_height="55dp"
-            android:layout_width="310dp"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="10dp"
             android:orientation="horizontal"
             android:text="FORGOT PASSWORD?"
-            android:background="@drawable/bkg_loginbtn"
+            android:background="@drawable/bkg_forgot_btn"
             />
 
     </LinearLayout>
