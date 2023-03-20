@@ -1,9 +1,13 @@
-package com.example.ontime
+package com.example.ontime.ui.login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.ontime.ui.main.MainActivity
+import com.example.ontime.R
+import com.example.ontime.ui.signup.SignUpActivity
+import com.example.ontime.ui.forgotPassword.ForgotPasswordActivity
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

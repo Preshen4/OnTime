@@ -1,8 +1,8 @@
-package com.example.ontime
+package com.example.ontime.ui.signup
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
+import com.example.ontime.R
 
 class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
