@@ -8,17 +8,10 @@ class SignUpActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
-        // Adds a back button to the action bar
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        // Removes the title bar
+        supportActionBar?.hide()
 
     }
 
-    // Adds a back button to the action bar
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
-            finish()
-        }
-        return super.onOptionsItemSelected(item)
-    }
 
 }

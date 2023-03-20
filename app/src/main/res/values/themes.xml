@@ -19,4 +19,17 @@
         <item name="cornerSizeBottomLeft">200dp</item>
     </style>
 
+    <style name="Theme.OnTime.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MyApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MyApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.OnTime.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.OnTime.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

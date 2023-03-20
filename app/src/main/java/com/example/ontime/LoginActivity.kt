@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         val forgotButton = findViewById<Button>(R.id.forgot_password_btn)
 
         loginButton.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             this.finish()
         }
