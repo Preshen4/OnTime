@@ -1,13 +1,5 @@
 package com.example.ontime.ui.projects
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+data class ProjectViewModel(val image: Int, val projectName: String, val projectDescription: String,val timeLine: String){
 
-class ProjectViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is project Fragment"
-    }
-    val text: LiveData<String> = _text
 }
