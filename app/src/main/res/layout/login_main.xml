@@ -11,7 +11,7 @@
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/logobanner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_alignParentTop="true"
         android:src="@drawable/logo"
         app:shapeAppearanceOverlay="@style/logoImageLogin"
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center"
             android:hint="@string/password"
             android:inputType="textPassword"
@@ -100,11 +100,18 @@
             android:layout_width="wrap_content"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center"
             android:hint="@string/forgot_password"
             android:background="@drawable/bkg_forgot_btn"
             />
+        <!--Google icon -->
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_height="match_parent"
+            android:layout_width="150dp"
+            android:layout_gravity="center" />
+
 
     </LinearLayout>
 

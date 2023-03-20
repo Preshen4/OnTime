@@ -9,8 +9,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_main)
-        // Removes the title bar
-        supportActionBar?.hide()
+
 
         val loginButton = findViewById<Button>(R.id.login_btn)
         val signupButton = findViewById<Button>(R.id.signup_btn)
