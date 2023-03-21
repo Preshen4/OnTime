@@ -10,9 +10,21 @@ import com.example.ontime.R
 // https://www.youtube.com/watch?v=5mdV1hLbXzo
 class ProjectAdapter(private val projectList: List<Project>) : RecyclerView.Adapter<ProjectAdapter.ProjectHolder>() {
 
+    //https://www.youtube.com/watch?v=dB9JOsVx-yY
+
+    private lateinit var mlistener: OnItemClickListener
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: OnItemClickListener) {
+        this.mlistener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.project_card, parent, false)
-        return ProjectHolder(itemView)
+        return ProjectHolder(itemView,mlistener)
     }
 
     override fun getItemCount(): Int {
@@ -28,11 +40,18 @@ class ProjectAdapter(private val projectList: List<Project>) : RecyclerView.Adap
 
     }
 
-    class ProjectHolder(val projectView: View) : RecyclerView.ViewHolder(projectView){
-        val projectImage = projectView.findViewById<ImageView>(R.id.project_image)
-        val projectName = projectView.findViewById<TextView>(R.id.project_name)
-        val projectDescription = projectView.findViewById<TextView>(R.id.project_description)
-        val projectTimeLine = projectView.findViewById<TextView>(R.id.project_timeline)
+    class ProjectHolder(private val projectView: View, listener: OnItemClickListener) : RecyclerView.ViewHolder(projectView){
+        val projectImage: ImageView = projectView.findViewById(R.id.project_image)
+        val projectName: TextView = projectView.findViewById(R.id.project_name)
+        val projectDescription: TextView = projectView.findViewById(R.id.project_description)
+        val projectTimeLine: TextView = projectView.findViewById(R.id.project_timeline)
 
+        init {
+
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+
+        }
     }
 }

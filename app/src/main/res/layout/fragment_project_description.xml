@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.projectDescription.ProjectDescriptionFragment">
+
+
+<LinearLayout
+    android:id="@+id/linearlayout_projectInfo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="40dp">
+
+    <TextView
+        android:id="@+id/project_description_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:text="Project Name"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/project_description_image"
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:src="@drawable/logo"
+        android:scaleType="fitXY" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/project_description_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="Project Info:"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/project_description_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:background="@drawable/bkg_info_txt"
+            android:layout_marginBottom="10dp"
+            android:text="This project was created as a test of the UI for OnTime App"
+            android:textColor="@color/black"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/project_timeline_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+
+            android:layout_marginBottom="10dp"
+            android:text="Time Line:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/project_description_timeline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:background="@drawable/bkg_info_txt"
+            android:layout_marginBottom="10dp"
+            android:text="12/02/22-12/03/22"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/project_streak_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:layout_marginBottom="10dp"
+            android:text="Streak:"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/project_description_streak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:background="@drawable/bkg_info_txt"
+            android:text="5 Days"
+            android:textColor="@color/black"
+            android:gravity="center" />
+    </LinearLayout>
+
+
+</LinearLayout>
+
+</FrameLayout>

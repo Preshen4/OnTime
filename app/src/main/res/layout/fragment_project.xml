@@ -2,31 +2,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/all_projects_fragments"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.projects.ProjectFragment">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/project_view"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"
-        android:background="@drawable/border"
-        tools:listitem="@layout/project_card"
-        android:isScrollContainer="true">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="vertical"
+        android:stateListAnimator="@null">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/add_project_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:clickable="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="16dp"
+            app:srcCompat="@drawable/ic_add"
+            android:focusable="true"
+            android:contentDescription="TODO" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/add_project_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/project_view"
-        android:clickable="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@drawable/ic_add"
-        />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/project_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:background="@drawable/border"
+            tools:listitem="@layout/project_card"
+            android:isScrollContainer="true"
+            android:focusable="true">
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+
+
+
 
 </LinearLayout>

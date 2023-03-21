@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.widget.Button
 import com.example.ontime.ui.main.MainActivity
 import com.example.ontime.R
+import com.example.ontime.databinding.LoginMainBinding
 import com.example.ontime.ui.signup.SignUpActivity
 import com.example.ontime.ui.forgotPassword.ForgotPasswordActivity
 
 class LoginActivity : AppCompatActivity() {
+    private lateinit var binding: LoginMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_main)

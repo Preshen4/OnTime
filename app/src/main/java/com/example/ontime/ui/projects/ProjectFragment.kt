@@ -1,16 +1,22 @@
 package com.example.ontime.ui.projects
 
+import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ontime.R
 import com.example.ontime.databinding.FragmentProjectBinding
+import com.example.ontime.ui.projectDescription.ProjectDescriptionFragment
 import com.google.android.material.snackbar.Snackbar
 
 class ProjectFragment : Fragment() {
@@ -18,8 +24,9 @@ class ProjectFragment : Fragment() {
     private var _binding: FragmentProjectBinding? = null
 
     private lateinit var adapter: ProjectAdapter
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var projectList : ArrayList<Project>
+
+    private lateinit var newRecyclerView: RecyclerView
+    private lateinit var newArrayList : ArrayList<Project>
 
     lateinit var imageId : Array<Int>
     lateinit var projectName : Array<String>
@@ -55,20 +62,25 @@ class ProjectFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         // https://www.youtube.com/watch?v=5mdV1hLbXzo
-        dataInit()
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.project_view)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.setHasFixedSize(true)
-        adapter = ProjectAdapter(projectList)
-        recyclerView.adapter = adapter
+       // val layoutManager = LinearLayoutManager(context)
+        newRecyclerView = view.findViewById(R.id.project_view)
+        newRecyclerView.layoutManager = LinearLayoutManager(context)
+        newRecyclerView.setHasFixedSize(true)
+        newArrayList = ArrayList<Project>()
+        adapter = ProjectAdapter(newArrayList)
+       // newRecyclerView.adapter = adapter
+
+        getUserData()
     }
 
-    private fun dataInit(){
+    private fun getUserData(){
 
-        projectList = ArrayList<Project>()
+        newArrayList = ArrayList()
 
         imageId = arrayOf(
+            R.drawable.logo,
+            R.drawable.logo,
+            R.drawable.logo,
             R.drawable.logo,
             R.drawable.logo,
             R.drawable.logo,
@@ -82,6 +94,9 @@ class ProjectFragment : Fragment() {
             "Project 3",
             "Project 4",
             "Project 5",
+            "Project 5",
+            "Project 5",
+            "Project 5",
         )
 
         projectDescription = arrayOf(
@@ -89,6 +104,9 @@ class ProjectFragment : Fragment() {
             "Description 2",
             "Description 3",
             "Description 4",
+            "Description 5",
+            "Description 5",
+            "Description 5",
             "Description 5",
         )
 
@@ -98,11 +116,53 @@ class ProjectFragment : Fragment() {
             "Deadline 3",
             "Deadline 4",
             "Deadline 5",
+            "Deadline 5",
+            "Deadline 5",
+            "Deadline 5",
         )
+
 
         for (i in imageId.indices){
             val project = Project(imageId[i], projectName[i], projectDescription[i], projectDeadline[i])
-            projectList.add(project)
+            newArrayList.add(project)
         }
+
+        var adapter = ProjectAdapter(newArrayList)
+        newRecyclerView.adapter = adapter
+        adapter.setOnItemClickListener(object: ProjectAdapter.OnItemClickListener{
+            override fun onItemClick(position: Int) {
+                // Open fragment_project_description
+                // This code works to change the view
+                val fragment = ProjectDescriptionFragment()
+                val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.all_projects_fragments, fragment)
+                transaction.addToBackStack(null)
+                transaction.commit()
+
+
+               // Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
+                /*val heading : EditText = view!!.findViewById(R.id.project_name)
+                val description : EditText = view!!.findViewById(R.id.project_description)
+                val image : ImageView = view!!.findViewById(R.id.project_image)
+                val timeline : EditText = view!!.findViewById(R.id.project_timeline)
+                val bundle = Bundle()
+                bundle.putString("heading", heading.text.toString())
+                bundle.putString("description", description.text.toString())
+                bundle.putString("deadline", timeline.text.toString())
+                bundle.putInt("image", image.id)
+                val fragment = ProjectDescriptionFragment()
+                fragment.arguments = bundle
+                val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                transaction.replace(R.id.all_projects_fragments, fragment)
+                transaction.addToBackStack(null)
+                transaction.commit()*/
+
+            }
+
+
+        })
     }
+
+
+
 }
