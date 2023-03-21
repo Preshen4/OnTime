@@ -24,5 +24,12 @@
     <string name="user_pic">User Pic</string>
     <string name="user_name">User Name</string>
     <string name="user_gmail_com">user@gmail.com</string>
+    <string name="content_description_media">Project Image</string>
+    <string name="title">Project Name</string>
+    <string name="secondary_text">Description</string>
+    <string name="supporting_text">Description Text</string>
+    <string name="action_1">Add</string>
+    <string name="action_2">Delete</string>
+    <string name="supporting_text_2">StartDate-EndDate</string>
 
 </resources>
