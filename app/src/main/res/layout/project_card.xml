@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="8dp"
+    android:layout_margin="@dimen/Margin8"
     android:clickable="true"
     android:focusable="true">
     <LinearLayout
@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/project_image"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="@dimen/ImgBannerHeight"
             app:srcCompat="@drawable/logo"
             android:scaleType="fitXY"
             android:contentDescription="@string/content_description_media"
@@ -25,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="@dimen/Padding16">
 
             <!-- Title, secondary and supporting text -->
             <TextView
@@ -33,15 +33,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title"
-                android:textSize="32sp"
+                android:textSize="@dimen/Heading"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/Margin8"
                 android:text="@string/secondary_text"
-                android:textSize="26sp"
+                android:textSize="@dimen/SubHeading"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 />
@@ -49,9 +49,9 @@
                 android:id="@+id/project_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/Text"
                 android:text="@string/supporting_text"
-                android:textSize="20sp"
+                android:textSize="@dimen/Text"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 />
@@ -60,9 +60,9 @@
                 android:id="@+id/project_timeline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="@dimen/SubText"
                 android:text="@string/supporting_text_2"
-                android:textSize="22sp"
+                android:textSize="@dimen/SubText"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary" />
 
@@ -72,18 +72,18 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="@dimen/Margin8"
             android:orientation="horizontal">
             <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/ConfirmBtnHeight"
+                android:layout_marginEnd="80dp"
                 android:text="@string/action_1"
                 style="?attr/borderlessButtonStyle"
                 />
             <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="150dp"
+                android:layout_height="@dimen/ConfirmBtnHeight"
                 android:text="@string/action_2"
                 style="?attr/borderlessButtonStyle"
                 />

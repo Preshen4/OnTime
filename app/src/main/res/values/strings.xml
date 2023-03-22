@@ -31,5 +31,8 @@
     <string name="action_1">Add</string>
     <string name="action_2">Delete</string>
     <string name="supporting_text_2">StartDate-EndDate</string>
+    <string name="page_title">OnTime</string>
+    <string name="search">Search</string>
+    <string name="content_description_search">Search for project</string>
 
 </resources>
