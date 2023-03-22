@@ -9,10 +9,8 @@
     tools:context=".ui.projects.ProjectFragment">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.6"
-        android:orientation="vertical"
-        android:stateListAnimator="@null">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_project_btn"
             android:layout_width="match_parent"
