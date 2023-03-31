@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ontime.R
 import com.example.ontime.databinding.FragmentProjectBinding
+import com.example.ontime.fragments.ui.addProject.AddProjectFragment
 import com.google.android.material.snackbar.Snackbar
 
 class ProjectFragment : Fragment() {
@@ -40,8 +41,13 @@ class ProjectFragment : Fragment() {
         val root: View = binding.root
 
         binding.addProjectBtn.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            // Displays the fragment_add_project fragment
+            val fragment = AddProjectFragment()
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container_view, fragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+
         }
 
         return root
