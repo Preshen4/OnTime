@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -12,6 +13,8 @@ import com.example.ontime.R
 import com.example.ontime.databinding.FragmentProjectBinding
 import com.example.ontime.fragments.ui.addProject.AddProjectFragment
 import com.google.android.material.snackbar.Snackbar
+import java.io.Console
+import kotlin.math.log
 
 class ProjectFragment : Fragment() {
 
@@ -39,16 +42,6 @@ class ProjectFragment : Fragment() {
 
         _binding = FragmentProjectBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        binding.addProjectBtn.setOnClickListener { view ->
-            // Displays the fragment_add_project fragment
-            val fragment = AddProjectFragment()
-            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container_view, fragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-
-        }
 
         return root
     }
@@ -128,38 +121,37 @@ class ProjectFragment : Fragment() {
 
         var adapter = ProjectAdapter(newArrayList)
         newRecyclerView.adapter = adapter
-        adapter.setOnItemClickListener(object: ProjectAdapter.OnItemClickListener{
+        adapter.setOnItemClickListener(object: ProjectAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                // Open fragment_project_description
-                // This code works to change the view
-
-              /*  val fragment = ProjectDescriptionFragment()
-                val transaction = requireActivity().supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.all_projects_fragments, fragment)
-                transaction.addToBackStack(null)
-                transaction.commit()*/
-
-
-                // Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
-                /*val heading : EditText = view!!.findViewById(R.id.project_name)
-                val description : EditText = view!!.findViewById(R.id.project_description)
-                val image : ImageView = view!!.findViewById(R.id.project_image)
-                val timeline : EditText = view!!.findViewById(R.id.project_timeline)
-                val bundle = Bundle()
-                bundle.putString("heading", heading.text.toString())
-                bundle.putString("description", description.text.toString())
-                bundle.putString("deadline", timeline.text.toString())
-                bundle.putInt("image", image.id)
-                val fragment = ProjectDescriptionFragment()
-                fragment.arguments = bundle
-                val transaction = requireActivity().supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.all_projects_fragments, fragment)
-                transaction.addToBackStack(null)
-                transaction.commit()*/
-
+                Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show()
             }
+            // Open fragment_project_description
+            // This code works to change the view
+
+            /*  val fragment = ProjectDescriptionFragment()
+                 val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                 transaction.replace(R.id.all_projects_fragments, fragment)
+                 transaction.addToBackStack(null)
+                 transaction.commit()*/
 
 
+            // Toast.makeText(context, "Item $position clicked", Toast.LENGTH_SHORT).show()
+            /*val heading : EditText = view!!.findViewById(R.id.project_name)
+                 val description : EditText = view!!.findViewById(R.id.project_description)
+                 val image : ImageView = view!!.findViewById(R.id.project_image)
+                 val timeline : EditText = view!!.findViewById(R.id.project_timeline)
+                 val bundle = Bundle()
+                 bundle.putString("heading", heading.text.toString())
+                 bundle.putString("description", description.text.toString())
+                 bundle.putString("deadline", timeline.text.toString())
+                 bundle.putInt("image", image.id)
+                 val fragment = ProjectDescriptionFragment()
+                 fragment.arguments = bundle
+                 val transaction = requireActivity().supportFragmentManager.beginTransaction()
+                 transaction.replace(R.id.all_projects_fragments, fragment)
+                 transaction.addToBackStack(null)
+                 transaction.commit()*/
         })
+
     }
 }
