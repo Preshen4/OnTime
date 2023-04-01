@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ontime.R
@@ -51,6 +52,11 @@ class ProjectFragment : Fragment() {
             transaction.commit()
         }
 
+
+        binding.addProjectBtn.setOnClickListener() {
+            NavHostFragment.findNavController(this).navigate(R.id.action_nav_project_to_addProjectFragment)
+        }
+
         return root
     }
 
@@ -71,6 +77,8 @@ class ProjectFragment : Fragment() {
         // newRecyclerView.adapter = adapter
 
         getUserData()
+
+
     }
 
     private fun getUserData(){
@@ -161,5 +169,9 @@ class ProjectFragment : Fragment() {
                  transaction.commit()*/
         })
 
+
+
     }
+
+
 }

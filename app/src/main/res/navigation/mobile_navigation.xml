@@ -15,11 +15,20 @@
         android:id="@+id/nav_project"
         android:name="com.example.ontime.fragments.ui.project.ProjectFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_project" />
+        tools:layout="@layout/fragment_project" >
+        <action
+            android:id="@+id/action_nav_project_to_addProjectFragment"
+            app:destination="@id/addProjectFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_graph"
         android:name="com.example.ontime.fragments.ui.graph.GraphFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_graph" />
+    <fragment
+        android:id="@+id/addProjectFragment"
+        android:name="com.example.ontime.fragments.ui.addProject.AddProjectFragment"
+        android:label="Add New Project"
+        tools:layout="@layout/fragment_add_project" />
 </navigation>
