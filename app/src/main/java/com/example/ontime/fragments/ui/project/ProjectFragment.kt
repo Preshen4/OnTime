@@ -6,16 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ontime.R
 import com.example.ontime.databinding.FragmentProjectBinding
-import com.example.ontime.fragments.ui.addProject.AddProjectFragment
-import com.google.android.material.snackbar.Snackbar
-import java.io.Console
-import kotlin.math.log
+import java.util.*
 
 class ProjectFragment : Fragment() {
 
@@ -44,17 +40,8 @@ class ProjectFragment : Fragment() {
         _binding = FragmentProjectBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.addProjectBtn.setOnClickListener {
-            val addProjectFragment = AddProjectFragment()
-            val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.nav_host_fragment_content_main, addProjectFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-
-
         binding.addProjectBtn.setOnClickListener() {
-            NavHostFragment.findNavController(this).navigate(R.id.action_nav_project_to_addProjectFragment)
+            NavHostFragment.findNavController(this  ).navigate(R.id.action_nav_project_to_addProjectFragment)
         }
 
         return root
