@@ -6,15 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ontime.R
 import com.example.ontime.databinding.FragmentProjectBinding
 import com.example.ontime.fragments.ui.addProject.AddProjectFragment
-import com.google.android.material.snackbar.Snackbar
-import java.io.Console
-import kotlin.math.log
+
 
 class ProjectFragment : Fragment() {
 
