@@ -43,6 +43,14 @@ class ProjectFragment : Fragment() {
         _binding = FragmentProjectBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.addProjectBtn.setOnClickListener {
+            val addProjectFragment = AddProjectFragment()
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.nav_host_fragment_content_main, addProjectFragment)
+            transaction.addToBackStack(null)
+            transaction.commit()
+        }
+
         return root
     }
 
