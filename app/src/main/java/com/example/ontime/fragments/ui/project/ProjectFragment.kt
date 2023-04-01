@@ -46,7 +46,7 @@ class ProjectFragment : Fragment() {
         binding.addProjectBtn.setOnClickListener {
             val addProjectFragment = AddProjectFragment()
             val transaction = requireActivity().supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.nav_host_fragment_content_main, addProjectFragment)
+            transaction.replace(R.id.fragment_project_view, addProjectFragment)
             transaction.addToBackStack(null)
             transaction.commit()
         }

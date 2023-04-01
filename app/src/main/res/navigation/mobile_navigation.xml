@@ -12,14 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_project"
-        android:name="com.example.ontime.fragments.ui.project.ProjectFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_project" />
-
-    <fragment
         android:id="@+id/nav_graph"
         android:name="com.example.ontime.fragments.ui.graph.GraphFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_graph" />
+    <activity
+        android:id="@+id/nav_project"
+        android:name="com.example.ontime.activitys.ProjectActivity"
+        android:label="ProjectActivity" />
 </navigation>
