@@ -60,11 +60,6 @@ class LoginFragment : Fragment() {
         return view
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
     // Set onclick event for signup button
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -81,25 +76,5 @@ class LoginFragment : Fragment() {
         }
     }
 
-    private fun signup(signupBtn : Button){
-        signupBtn.setOnClickListener {
-            val signupFragment = SignupFragment()
-            val transaction = parentFragmentManager.beginTransaction()
-            //transaction.replace(R.id.fragment_container_view, signupFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-    }
-
-
-    private fun forgotpassword(forgotBtn : Button){
-        forgotBtn.setOnClickListener {
-            val forgotFragment = ForgotpasswordFragment()
-            val transaction = parentFragmentManager.beginTransaction()
-            //transaction.replace(R.id.fragment_container_view, forgotFragment)
-            transaction.addToBackStack(null)
-            transaction.commit()
-        }
-    }
 
 }
