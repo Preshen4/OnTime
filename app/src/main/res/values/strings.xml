@@ -44,5 +44,12 @@
     <string name="end_date">End Date</string>
     <string name="start_date">Start Date</string>
     <string name="capture">Capture</string>
+    <string name="Date">Date</string>
+    <string name="category">Category</string>
+    <string name="hours">Hours Worked</string>
+    <string name="add_timesheet">Add Time Sheet</string>
+    <string name="time_spent">Time Spent:</string>
+    <string name="select_category">Select Category:</string>
+    <string name="new_category">New Category</string>
 
 </resources>

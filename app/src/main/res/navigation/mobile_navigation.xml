@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/nav_home">
+    app:startDestination="@+id/nav_home">
 
     <fragment
         android:id="@+id/nav_home"
@@ -15,14 +15,13 @@
         android:id="@+id/nav_project"
         android:name="com.example.ontime.fragments.ui.project.ProjectFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_project">
+        tools:layout="@layout/fragment_project" >
         <action
             android:id="@+id/action_nav_project_to_addProjectFragment"
-            app:destination="@id/addProjectFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:destination="@id/nav_add_project" />
+        <action
+            android:id="@+id/action_nav_project_to_timeSheetFragment"
+            app:destination="@id/nav_time_sheet" />
     </fragment>
 
     <fragment
@@ -31,8 +30,25 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_graph" />
     <fragment
-        android:id="@+id/addProjectFragment"
+        android:id="@+id/nav_add_project"
         android:name="com.example.ontime.fragments.ui.addProject.AddProjectFragment"
         android:label="Add New Project"
         tools:layout="@layout/fragment_add_project" />
+    <fragment
+        android:id="@+id/nav_time_sheet"
+        android:name="com.example.ontime.fragments.ui.timeSheet.TimeSheetFragment"
+        android:label="TimeSheetFragment" >
+        <action
+            android:id="@+id/action_nav_time_sheet_to_addTimeSheetFragment"
+            app:destination="@id/addTimeSheetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTimeSheetFragment"
+        android:name="com.example.ontime.fragments.ui.addTimeSheet.AddTimeSheetFragment"
+        android:label="fragment_add_time_sheet"
+        tools:layout="@layout/fragment_add_time_sheet" >
+        <action
+            android:id="@+id/action_addTimeSheetFragment_to_nav_time_sheet"
+            app:destination="@id/nav_time_sheet" />
+    </fragment>
 </navigation>
