@@ -18,7 +18,13 @@ class ForgotpasswordFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_forgotpassword, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_forgotpassword, container, false)
+        val btnBack = view.findViewById<View>(R.id.btnForgotPasswordBack)
+        btnBack.setOnClickListener(){
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

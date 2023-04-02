@@ -7,9 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.ontime.R
+import com.example.ontime.databinding.FragmentLoginBinding
+import com.example.ontime.databinding.FragmentSignupBinding
 
 class SignupFragment : Fragment() {
 
+    private lateinit var binding : FragmentSignupBinding
     companion object {
         fun newInstance() = SignupFragment()
     }
@@ -20,7 +23,13 @@ class SignupFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_signup, container, false)
+
+        val view = inflater.inflate(R.layout.fragment_signup, container, false)
+        val btnBack = view.findViewById<View>(R.id.btnSignUpBack)
+        btnBack.setOnClickListener(){
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+        return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

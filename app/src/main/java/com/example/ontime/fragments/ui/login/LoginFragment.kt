@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
 import androidx.fragment.app.replace
+import androidx.navigation.Navigation
 import com.example.ontime.R
 import com.example.ontime.activitys.MainActivity
 import com.example.ontime.databinding.FragmentLoginBinding
@@ -44,9 +45,17 @@ class LoginFragment : Fragment() {
         val loginBtn = view.findViewById<View>(R.id.login_btn)
         val forgotBtn = view.findViewById<View>(R.id.forgot_password_btn)
 
+        signupBtn.setOnClickListener(){
+            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_signupFragment)
+        }
+
+        forgotBtn.setOnClickListener(){
+            Navigation.findNavController(view).navigate(R.id.action_loginFragment_to_forgotpasswordFragment)
+        }
+
+
         login(loginBtn as Button)
-        signup(signupBtn as Button)
-        forgotpassword(forgotBtn as Button)
+
 
         return view
     }
@@ -76,17 +85,18 @@ class LoginFragment : Fragment() {
         signupBtn.setOnClickListener {
             val signupFragment = SignupFragment()
             val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container_view, signupFragment)
+            //transaction.replace(R.id.fragment_container_view, signupFragment)
             transaction.addToBackStack(null)
             transaction.commit()
         }
     }
 
+
     private fun forgotpassword(forgotBtn : Button){
         forgotBtn.setOnClickListener {
             val forgotFragment = ForgotpasswordFragment()
             val transaction = parentFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container_view, forgotFragment)
+            //transaction.replace(R.id.fragment_container_view, forgotFragment)
             transaction.addToBackStack(null)
             transaction.commit()
         }

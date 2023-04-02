@@ -20,10 +20,8 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_main)
-
         val loginFragment = LoginFragment()
         val fragmentManager = supportFragmentManager
-        fragmentManager.beginTransaction().add(R.id.fragment_container_view, loginFragment).commit()
 
         /*if (savedInstanceState == null) {
             supportFragmentManager.commit {
