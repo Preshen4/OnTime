@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
@@ -47,7 +48,6 @@ class ProjectFragment : Fragment() {
         }
 
 
-
         return root
     }
 
@@ -68,7 +68,6 @@ class ProjectFragment : Fragment() {
         // newRecyclerView.adapter = adapter
 
         getUserData()
-
 
     }
 
@@ -132,7 +131,17 @@ class ProjectFragment : Fragment() {
 
                 NavHostFragment.findNavController(this@ProjectFragment  ).navigate(R.id.action_nav_project_to_timeSheetFragment)
             }
+
+            override fun onAddButtonClicked(position: Int) {
+                NavHostFragment.findNavController(this@ProjectFragment  ).navigate(R.id.action_nav_project_to_nav_add_time_sheet)
+            }
+
+            override fun onDeleteButtonClicked(position: Int) {
+                NavHostFragment.findNavController(this@ProjectFragment  ).navigate(R.id.action_nav_project_to_timeSheetFragment)
+            }
         })
+
+
 
             // Open fragment_project_description
             // This code works to change the view

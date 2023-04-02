@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_nav_project_to_timeSheetFragment"
             app:destination="@id/nav_time_sheet" />
+        <action
+            android:id="@+id/action_nav_project_to_nav_add_time_sheet"
+            app:destination="@id/nav_add_time_sheet" />
     </fragment>
 
     <fragment
@@ -40,15 +43,18 @@
         android:label="TimeSheetFragment" >
         <action
             android:id="@+id/action_nav_time_sheet_to_addTimeSheetFragment"
-            app:destination="@id/addTimeSheetFragment" />
+            app:destination="@id/nav_add_time_sheet" />
     </fragment>
     <fragment
-        android:id="@+id/addTimeSheetFragment"
+        android:id="@+id/nav_add_time_sheet"
         android:name="com.example.ontime.fragments.ui.addTimeSheet.AddTimeSheetFragment"
         android:label="fragment_add_time_sheet"
         tools:layout="@layout/fragment_add_time_sheet" >
         <action
             android:id="@+id/action_addTimeSheetFragment_to_nav_time_sheet"
             app:destination="@id/nav_time_sheet" />
+        <action
+            android:id="@+id/action_nav_add_time_sheet_to_nav_project"
+            app:destination="@id/nav_project" />
     </fragment>
 </navigation>

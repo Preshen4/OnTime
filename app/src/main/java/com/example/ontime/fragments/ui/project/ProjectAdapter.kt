@@ -3,10 +3,16 @@ package com.example.ontime.fragments.ui.project
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.ontime.R
+import com.google.android.material.snackbar.Snackbar
+
 // https://www.youtube.com/watch?v=5mdV1hLbXzo
 class ProjectAdapter(private val projectList: List<Project>) : RecyclerView.Adapter<ProjectAdapter.ProjectHolder>() {
 
@@ -16,6 +22,8 @@ class ProjectAdapter(private val projectList: List<Project>) : RecyclerView.Adap
 
     interface OnItemClickListener {
         fun onItemClick(position: Int)
+        fun onAddButtonClicked(position: Int)
+        fun onDeleteButtonClicked(position: Int)
     }
 
     fun setOnItemClickListener(listener: OnItemClickListener) {
@@ -45,11 +53,20 @@ class ProjectAdapter(private val projectList: List<Project>) : RecyclerView.Adap
         val projectName: TextView = projectView.findViewById(R.id.project_name)
         val projectDescription: TextView = projectView.findViewById(R.id.project_description)
         val projectTimeLine: TextView = projectView.findViewById(R.id.project_timeline)
-
+        private val addProjectBtn: Button = projectView.findViewById(R.id.add_btn)
+        private val deleteProjectBtn : Button = projectView.findViewById(R.id.delete_btn)
         init {
 
             itemView.setOnClickListener {
                 listener.onItemClick(adapterPosition)
+            }
+
+            addProjectBtn.setOnClickListener {
+                listener.onAddButtonClicked(adapterPosition)
+            }
+
+            deleteProjectBtn.setOnClickListener {
+                listener.onDeleteButtonClicked(adapterPosition)
             }
 
         }
