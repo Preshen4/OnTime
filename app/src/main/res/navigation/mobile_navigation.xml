@@ -14,23 +14,35 @@
     <fragment
         android:id="@+id/nav_project"
         android:name="com.example.ontime.fragments.ui.project.ProjectFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_project"
         tools:layout="@layout/fragment_project" >
         <action
             android:id="@+id/action_nav_project_to_addProjectFragment"
-            app:destination="@id/nav_add_project" />
+            app:destination="@id/nav_add_project"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
         <action
             android:id="@+id/action_nav_project_to_timeSheetFragment"
-            app:destination="@id/nav_time_sheet" />
+            app:destination="@id/nav_time_sheet"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
         <action
             android:id="@+id/action_nav_project_to_nav_add_time_sheet"
-            app:destination="@id/nav_add_time_sheet" />
+            app:destination="@id/nav_add_time_sheet"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
     </fragment>
 
     <fragment
         android:id="@+id/nav_graph"
         android:name="com.example.ontime.fragments.ui.graph.GraphFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_graph"
         tools:layout="@layout/fragment_graph" />
     <fragment
         android:id="@+id/nav_add_project"
@@ -43,7 +55,11 @@
         android:label="TimeSheetFragment" >
         <action
             android:id="@+id/action_nav_time_sheet_to_addTimeSheetFragment"
-            app:destination="@id/nav_add_time_sheet" />
+            app:destination="@id/nav_add_time_sheet"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
     </fragment>
     <fragment
         android:id="@+id/nav_add_time_sheet"
@@ -52,9 +68,17 @@
         tools:layout="@layout/fragment_add_time_sheet" >
         <action
             android:id="@+id/action_addTimeSheetFragment_to_nav_time_sheet"
-            app:destination="@id/nav_time_sheet" />
+            app:destination="@id/nav_time_sheet"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
         <action
             android:id="@+id/action_nav_add_time_sheet_to_nav_project"
-            app:destination="@id/nav_project" />
+            app:destination="@id/nav_project"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
     </fragment>
 </navigation>
