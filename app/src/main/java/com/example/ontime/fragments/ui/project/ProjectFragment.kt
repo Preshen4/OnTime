@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
@@ -43,6 +45,8 @@ class ProjectFragment : Fragment() {
         binding.addProjectBtn.setOnClickListener() {
             NavHostFragment.findNavController(this  ).navigate(R.id.action_nav_project_to_addProjectFragment)
         }
+
+
 
         return root
     }
@@ -121,13 +125,15 @@ class ProjectFragment : Fragment() {
             val project = Project(imageId[i], projectName[i], projectDescription[i], projectDeadline[i])
             newArrayList.add(project)
         }
-
         var adapter = ProjectAdapter(newArrayList)
         newRecyclerView.adapter = adapter
         adapter.setOnItemClickListener(object: ProjectAdapter.OnItemClickListener {
             override fun onItemClick(position: Int) {
-                Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show()
+
+                NavHostFragment.findNavController(this@ProjectFragment  ).navigate(R.id.action_nav_project_to_timeSheetFragment)
             }
+        })
+
             // Open fragment_project_description
             // This code works to change the view
 
@@ -154,7 +160,6 @@ class ProjectFragment : Fragment() {
                  transaction.replace(R.id.all_projects_fragments, fragment)
                  transaction.addToBackStack(null)
                  transaction.commit()*/
-        })
 
 
 

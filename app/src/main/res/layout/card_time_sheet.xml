@@ -6,20 +6,23 @@
     android:layout_margin="@dimen/Margin8"
     android:clickable="true"
     android:focusable="true">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <!-- Media -->
         <ImageView
-            android:id="@+id/project_image"
-            android:layout_width="match_parent"
+            android:id="@+id/timesheet_image"
+            android:layout_width="@dimen/card_image_width"
             android:layout_height="@dimen/card_image_height"
-            app:srcCompat="@drawable/logo"
-            android:scaleType="fitXY"
             android:contentDescription="@string/content_description_media"
-            />
+            android:padding="@dimen/Padding16"
+            android:scaleType="fitXY"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/logo" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,65 +32,43 @@
 
             <!-- Title, secondary and supporting text -->
             <TextView
-                android:id="@+id/project_name"
+                android:id="@+id/timesheet_category"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/title"
-                android:textSize="@dimen/Heading"
+                android:text="@string/category"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
-                />
+                android:textSize="@dimen/Heading" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/Margin8"
                 android:text="@string/secondary_text"
-                android:textSize="@dimen/SubHeading"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="@dimen/SubHeading" />
+
             <TextView
-                android:id="@+id/project_description"
-                android:layout_width="wrap_content"
+                android:id="@+id/timesheet_description"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/Text"
                 android:text="@string/supporting_text"
-                android:textSize="@dimen/Text"
                 android:lines="5"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
-                />
+                android:textSize="@dimen/Text" />
 
             <TextView
-                android:id="@+id/project_timeline"
+                android:id="@+id/timesheet_hours"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/SubText"
-                android:text="@string/supporting_text_2"
-                android:textSize="@dimen/SubText"
+                android:text="@string/hours"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary" />
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="@dimen/SubText" />
 
-        </LinearLayout>
-
-        <!-- Buttons -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/Margin8"
-            android:orientation="horizontal">
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="150dp"
-                android:layout_height="@dimen/ConfirmBtnHeight"
-                android:layout_marginEnd="80dp"
-                android:text="@string/action_1"
-                style="?attr/borderlessButtonStyle"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="150dp"
-                android:layout_height="@dimen/ConfirmBtnHeight"
-                android:text="@string/action_2"
-                style="?attr/borderlessButtonStyle"
-                />
         </LinearLayout>
 
     </LinearLayout>

@@ -38,6 +38,8 @@
     <!--Button Dimen-->
     <dimen name="ConfirmBtnWidth">300dp</dimen>
     <dimen name="ConfirmBtnHeight">60dp</dimen>
+    <dimen name="card_image_height">250dp</dimen>
+    <dimen name="card_image_width">200dp</dimen>
 
 
 </resources>
