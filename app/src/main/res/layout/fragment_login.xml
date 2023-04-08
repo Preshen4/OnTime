@@ -1,151 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ui.login.LoginFragment">
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/logobanner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/logo"
+        app:layout_constraintDimensionRatio="1:0.8"
+        app:layout_constraintEnd_toEndOf="@id/guidelineParent2"
+        app:layout_constraintStart_toStartOf="@id/guidelineParent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearance="@style/logoImageLogin" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <!--https://www.youtube.com/watch?v=Y6oU_8jEaOE-->
+    <TextView
+        android:id="@+id/textView_login"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/log_in"
+        android:textSize="@dimen/Heading"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textField_login_email"
+        app:layout_constraintDimensionRatio="1:0.2"
+        app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+        app:layout_constraintStart_toStartOf="@id/guidelineContent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/logobanner" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/logobanner"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/ImgBannerHeight"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/logo"
-            app:shapeAppearance="@style/logoImageLogin"
-            android:scaleType="fitXY"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField_login_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:hint="@string/full_name"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/textField_login_password"
+        app:layout_constraintDimensionRatio="1:0.2"
+        app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+        app:layout_constraintStart_toStartOf="@id/guidelineContent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/textView_login"
+        app:startIconContentDescription="Person Icon"
+        app:startIconDrawable="@drawable/ic_email">
 
-        <LinearLayout
-            android:id="@+id/linearlayout_loginInfo"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="40dp"
-            android:layout_below="@+id/logobanner">
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/Margin10"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/Padding10"
+            android:paddingEnd="@dimen/Padding10" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Log in"
-                android:textSize="@dimen/Heading"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginBottom="@dimen/Margin20"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField_login_email"
-                android:layout_width="@dimen/TextInputLayoutWidth"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                app:startIconDrawable="@drawable/ic_email"
-                app:startIconContentDescription="Person Icon"
-                app:errorEnabled="true"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="@string/full_name">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField_login_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:hint="@string/password"
+        app:endIconMode="password_toggle"
+        app:errorEnabled="true"
+        app:layout_constraintBottom_toTopOf="@+id/buttons_container"
+        app:layout_constraintDimensionRatio="1:0.2"
+        app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+        app:layout_constraintStart_toStartOf="@id/guidelineContent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/textField_login_email"
+        app:startIconContentDescription="Password Icon"
+        app:startIconDrawable="@drawable/ic_password">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/Padding10"
-                    android:paddingEnd="@dimen/Padding10"
-                    android:layout_marginBottom="@dimen/Margin10"
-                    android:layout_gravity="center"
-                    android:inputType="textEmailAddress"
-                    />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/Margin10"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/Padding10"
+            android:paddingEnd="@dimen/Padding10" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <LinearLayout
+        android:id="@+id/buttons_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/sign_in_button"
+        app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+        app:layout_constraintStart_toStartOf="@id/guidelineContent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/textField_login_password">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField_login_password"
-                android:layout_width="@dimen/TextInputLayoutWidth"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                app:startIconDrawable="@drawable/ic_password"
-                app:startIconContentDescription="Password Icon"
-                app:endIconMode="password_toggle"
-                app:errorEnabled="true"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:hint="@string/password">
+        <Button
+            android:id="@+id/signup_btn"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/Padding10"
+            android:paddingEnd="@dimen/Padding10"
+            android:text="@string/signup" />
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingStart="@dimen/Padding10"
-                    android:paddingEnd="@dimen/Padding10"
-                    android:layout_marginBottom="@dimen/Margin10"
-                    android:layout_gravity="center"
-                    android:inputType="textPassword"
-                    />
+        <Button
+            android:id="@+id/login_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingStart="@dimen/Padding10"
+            android:paddingEnd="@dimen/Padding10"
+            android:text="@string/login" />
 
-            </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linearlayout_login_btns"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center">
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/forgot_password_btn"
+        app:layout_constraintDimensionRatio="1:0.2"
+        app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guidelineContent"
+        app:layout_constraintTop_toBottomOf="@+id/buttons_container" />
 
-                <Button
-                    android:id="@+id/signup_btn"
-                    android:layout_height="@dimen/loginbtnHeight"
-                    android:layout_width="@dimen/loginbtnWidth"
-                    android:paddingStart="@dimen/Padding10"
-                    android:paddingEnd="@dimen/Padding10"
-                    android:layout_marginEnd="@dimen/Margin20"
-                    android:layout_marginBottom="@dimen/Margin10"
-                    android:text="@string/signup"
-                    style="?attr/materialButtonOutlinedStyle"
-                    />
-
-                <Button
-                    android:id="@+id/login_btn"
-                    android:layout_height="@dimen/loginbtnHeight"
-                    android:layout_width="@dimen/loginbtnWidth"
-                    android:paddingStart="@dimen/Padding10"
-                    android:paddingEnd="@dimen/Padding10"
-                    android:layout_marginBottom="@dimen/Padding10"
-                    android:text="@string/login"
-                    />
-
-            </LinearLayout>
-
-            <!--Google icon -->
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/sign_in_button"
-                android:layout_height="match_parent"
-                android:layout_width="@dimen/ConfirmBtnWidth"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/Margin10"
-                android:layout_marginEnd="@dimen/Margin10"
-                android:layout_marginStart="@dimen/Margin10"
-                android:layout_marginTop="@dimen/Margin10"
-                />
-
-            <Button
-                android:id="@+id/forgot_password_btn"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:paddingStart="@dimen/Padding10"
-                android:paddingEnd="@dimen/Padding10"
-                android:layout_marginBottom="@dimen/Margin10"
-                android:layout_gravity="center"
-                android:hint="@string/forgot_password"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                />
+    <Button
+        android:id="@+id/forgot_password_btn"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:hint="@string/forgot_password"
+        android:paddingStart="@dimen/Padding10"
+        android:paddingEnd="@dimen/Padding10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:0.2"
+        app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/guidelineContent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
 
 
-        </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
 
-    </RelativeLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineParent2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContent2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContentMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContentMiddle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

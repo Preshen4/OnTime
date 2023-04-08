@@ -17,10 +17,10 @@
             android:id="@+id/timesheet_image"
             android:layout_width="@dimen/card_image_width"
             android:layout_height="@dimen/card_image_height"
+            android:layout_gravity="center"
             android:contentDescription="@string/content_description_media"
             android:padding="@dimen/Padding16"
             android:scaleType="fitXY"
-            android:layout_gravity="center"
             app:srcCompat="@drawable/logo" />
 
 
@@ -53,8 +53,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/Text"
-                android:text="@string/supporting_text"
                 android:lines="5"
+                android:text="@string/supporting_text"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 android:textSize="@dimen/Text" />
