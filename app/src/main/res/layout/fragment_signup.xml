@@ -11,17 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/btnSignUpBack"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:navigationIcon="?attr/homeAsUpIndicator"
-            app:layout_constraintDimensionRatio="1:0.8"
-            app:layout_constraintEnd_toEndOf="@id/guidelineParent2"
-            app:layout_constraintStart_toStartOf="@id/guidelineParent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/logobanner"
             android:layout_width="0dp"
@@ -225,5 +214,10 @@
             app:layout_constraintGuide_percent="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/btnSignUpBack"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        />
 </FrameLayout>
