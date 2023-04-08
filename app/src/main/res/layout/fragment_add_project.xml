@@ -6,143 +6,214 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.ui.addProject.AddProjectFragment">
 
-        <LinearLayout
-            android:id="@+id/linearlayout_loginInfo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_viewer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/logo"
+            app:layout_constraintDimensionRatio="1:0.8"
+            app:layout_constraintEnd_toEndOf="@id/guidelineParent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineParent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_startDate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/start_date"
+            app:layout_constraintDimensionRatio="1:0.3"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContentMiddle"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toTopOf="@id/guidelineContentTop"/>
+
+        <Button
+            android:id="@+id/btn_endDate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/end_date"
+            app:layout_constraintDimensionRatio="1:0.3"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContentMiddle2"
+            app:layout_constraintTop_toTopOf="@id/guidelineContentTop"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_add_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:orientation="vertical">
+            android:hint="@string/project_name"
+            app:errorEnabled="true"
+            app:startIconContentDescription="Person Icon"
+            app:startIconDrawable="@drawable/ic_folder"
+            app:layout_constraintDimensionRatio="1:0.2"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@id/btn_endDate">
 
-
-            <ImageView
-                android:id="@+id/img_viewer"
-                android:layout_width="300dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/Margin20">
-
-                <Button
-                    android:id="@+id/btn_startDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="83dp"
-                    android:hint="@string/start_date" />
-
-                <Button
-                    android:id="@+id/btn_endDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:hint="@string/end_date" />
-
-            </LinearLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField_add_name"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/TextInputLayoutWidth"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:hint="@string/project_name"
-                app:errorEnabled="true"
-                app:startIconContentDescription="Person Icon"
-                app:startIconDrawable="@drawable/ic_name">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/add_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/Margin10"
-                    android:inputType="text"
-                    android:paddingStart="@dimen/Padding10"
-                    android:paddingEnd="@dimen/Padding10" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textField_add_description"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="@dimen/TextInputLayoutWidth"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:hint="@string/project_description"
-                app:errorEnabled="true"
-                app:startIconContentDescription="Person Icon"
-                app:startIconDrawable="@drawable/ic_email">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/add_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/Margin10"
-                    android:inputType="text"
-                    android:maxLines="5"
-                    android:paddingStart="@dimen/Padding10"
-                    android:paddingEnd="@dimen/Padding10"
-                    android:scrollbars="vertical" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <SeekBar
-                android:id="@+id/add_min_time_seekbar"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:indeterminate="false"
-                android:min="1"
-                android:max="24"
-                android:progress="1" />
-
-            <TextView
-                android:id="@+id/add_min_time_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/Margin20"
-                android:text="@string/min_time"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <SeekBar
-                android:id="@+id/add_max_time_seekbar"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:indeterminate="false"
-                android:min="2"
-                android:max="24"
-                android:progress="2" />
-
-            <TextView
-                android:id="@+id/add_max_time_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/Margin20"
-                android:text="@string/max_time"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-
-            <Button
-                android:layout_width="@dimen/ConfirmBtnWidth"
-                android:layout_height="@dimen/ConfirmBtnHeight"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/Margin10"
-                android:hint="@string/capture"
+                android:inputType="text"
                 android:paddingStart="@dimen/Padding10"
                 android:paddingEnd="@dimen/Padding10" />
 
-        </LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_add_description"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:hint="@string/project_description"
+            app:errorEnabled="true"
+            app:startIconContentDescription="Person Icon"
+            app:startIconDrawable="@drawable/ic_description"
+            app:layout_constraintDimensionRatio="1:0.2"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@id/textField_add_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/add_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/Margin10"
+                android:inputType="text"
+                android:maxLines="5"
+                android:paddingStart="@dimen/Padding10"
+                android:paddingEnd="@dimen/Padding10"
+                android:scrollbars="vertical" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <SeekBar
+            android:id="@+id/add_min_time_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:indeterminate="false"
+            android:min="2"
+            android:max="24"
+            android:progress="2"
+            app:layout_constraintDimensionRatio="1:0.1"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@id/textField_add_description"/>
+
+        <TextView
+            android:id="@+id/add_min_time_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/time_spent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="1:0.1"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@id/add_min_time_seekbar"/>
+
+        <SeekBar
+            android:id="@+id/add_max_time_seekbar"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:indeterminate="false"
+            android:min="2"
+            android:max="24"
+            android:progress="2"
+            app:layout_constraintDimensionRatio="1:0.1"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@id/add_min_time_text"/>
+
+        <TextView
+            android:id="@+id/add_max_time_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="@string/time_spent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintDimensionRatio="1:0.1"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@id/add_max_time_seekbar"/>
+
+
+        <Button
+            android:id="@+id/btn_capture"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/Margin10"
+            android:hint="@string/capture"
+            android:paddingStart="@dimen/Padding10"
+            android:paddingEnd="@dimen/Padding10"
+            app:layout_constraintDimensionRatio="1:0.2"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@id/add_max_time_text"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineParent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContentTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.42" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContentMiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.48" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContentMiddle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/add_image_fab"
