@@ -6,12 +6,11 @@
     android:layout_margin="@dimen/Margin8"
     android:clickable="true"
     android:focusable="true">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
-        <!-- Media -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <ImageView
             android:id="@+id/project_image"
             android:layout_width="match_parent"
@@ -19,80 +18,132 @@
             app:srcCompat="@drawable/logo"
             android:scaleType="fitXY"
             android:contentDescription="@string/content_description_media"
-            />
+            app:layout_constraintDimensionRatio="1:0.8"
+            app:layout_constraintEnd_toEndOf="@id/guidelineParent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineParent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/project_name"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/title"
+            android:textSize="@dimen/Heading"
+            android:textAppearance="?attr/textAppearanceTitleMedium"
+            app:layout_constraintDimensionRatio="1:0.2"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@+id/project_image"/>
+
+
+        <TextView
+            android:id="@+id/project_description"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:lines="5"
+            android:text="@string/supporting_text"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="@dimen/Text"
+            app:layout_constraintDimensionRatio="1:0.2"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@+id/project_name" />
+
+        <TextView
+            android:id="@+id/project_timeline"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/supporting_text_2"
+            android:textSize="@dimen/SubText"
+            android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintDimensionRatio="1:0.2"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@+id/project_description" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/Padding16">
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:0.2"
+            app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
+            app:layout_constraintStart_toStartOf="@id/guidelineContent"
+            app:layout_constraintTop_toBottomOf="@+id/project_timeline">
 
-            <!-- Title, secondary and supporting text -->
-            <TextView
-                android:id="@+id/project_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/title"
-                android:textSize="@dimen/Heading"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/Margin8"
-                android:text="@string/secondary_text"
-                android:textSize="@dimen/SubHeading"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
-            <TextView
-                android:id="@+id/project_description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/Text"
-                android:text="@string/supporting_text"
-                android:textSize="@dimen/Text"
-                android:lines="5"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
-
-            <TextView
-                android:id="@+id/project_timeline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/SubText"
-                android:text="@string/supporting_text_2"
-                android:textSize="@dimen/SubText"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary" />
-
-        </LinearLayout>
-
-        <!-- Buttons -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/Margin8"
-            android:orientation="horizontal">
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/add_btn"
                 android:layout_width="150dp"
                 android:layout_height="@dimen/ConfirmBtnHeight"
-                android:layout_marginEnd="80dp"
+                android:layout_marginEnd="65dp"
                 android:text="@string/action_1"
                 style="?attr/borderlessButtonStyle"
                 />
+
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/delete_btn"
+                style="?attr/borderlessButtonStyle"
                 android:layout_width="150dp"
                 android:layout_height="@dimen/ConfirmBtnHeight"
-                android:text="@string/action_2"
-                style="?attr/borderlessButtonStyle"
-                />
+                android:text="@string/action_2" />
+
         </LinearLayout>
 
-    </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineParent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="1.0" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContentTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.42" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContent2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContentMiddle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.48" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContentMiddle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
 
 

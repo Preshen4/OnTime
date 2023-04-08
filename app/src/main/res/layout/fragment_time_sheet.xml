@@ -19,7 +19,8 @@
         android:clickable="true"
         android:contentDescription="TODO"
         android:focusable="true"
-        app:srcCompat="@drawable/ic_add" />
+        app:srcCompat="@drawable/ic_add"
+        android:layout_gravity="bottom|end"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/timesheet_view"
@@ -29,55 +30,5 @@
         android:focusable="true"
         android:isScrollContainer="true"
         tools:listitem="@layout/card_time_sheet" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineParent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.0" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineParent2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="1.0" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineContentTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.42" />
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineContent2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineContentMiddle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.48" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineContentMiddle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
