@@ -8,32 +8,76 @@
     android:orientation="vertical"
     tools:context="fragments.ui.timeSheet.TimeSheetFragment">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_timesheet_btn"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:clickable="true"
+        android:contentDescription="TODO"
+        android:focusable="true"
+        app:srcCompat="@drawable/ic_add" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/add_timesheet_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="15dp"
-            android:clickable="true"
-            android:contentDescription="TODO"
-            android:focusable="true"
-            app:srcCompat="@drawable/ic_add" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/timesheet_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:focusable="true"
+        android:isScrollContainer="true"
+        tools:listitem="@layout/card_time_sheet" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/timesheet_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:focusable="true"
-            android:isScrollContainer="true"
-            tools:listitem="@layout/card_time_sheet"></androidx.recyclerview.widget.RecyclerView>
-    </RelativeLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineParent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineParent2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="1.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContentTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.42" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContent2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContentMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContentMiddle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
