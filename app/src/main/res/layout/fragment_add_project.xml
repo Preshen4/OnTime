@@ -25,7 +25,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:hint="@string/start_date"
-            app:layout_constraintDimensionRatio="1:0.3"
+            app:layout_constraintDimensionRatio="1:0.4"
             app:layout_constraintEnd_toEndOf="@id/guidelineContentMiddle"
             app:layout_constraintStart_toStartOf="@id/guidelineContent"
             app:layout_constraintTop_toTopOf="@id/guidelineContentTop"/>
@@ -35,7 +35,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:hint="@string/end_date"
-            app:layout_constraintDimensionRatio="1:0.3"
+            app:layout_constraintDimensionRatio="1:0.4"
             app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
             app:layout_constraintStart_toStartOf="@id/guidelineContentMiddle2"
             app:layout_constraintTop_toTopOf="@id/guidelineContentTop"/>
@@ -154,14 +154,14 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_marginBottom="@dimen/Margin10"
             android:hint="@string/capture"
             android:paddingStart="@dimen/Padding10"
             android:paddingEnd="@dimen/Padding10"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="1:0.2"
             app:layout_constraintEnd_toEndOf="@id/guidelineContent2"
             app:layout_constraintStart_toStartOf="@id/guidelineContent"
-            app:layout_constraintTop_toBottomOf="@id/add_max_time_text"/>
+            app:layout_constraintTop_toBottomOf="@id/add_max_time_text" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineParent"

@@ -52,5 +52,7 @@
     <string name="select_category">Select Category:</string>
     <string name="new_category">New Category</string>
     <string name="log_in">Log in</string>
+    <string name="select_date">Select Date</string>
+    <string name="select_date2">Please select a date.</string>
 
 </resources>
